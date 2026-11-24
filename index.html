@@ -6,25 +6,71 @@
 <title>Brandão Móveis Planejados - Passo Fundo RS</title>
 <style>
 :root{--black:#101014;--red:#c51f32;--red-dark:#941629;--ink:#202027;--muted:#707078;--paper:#f6f5f3}
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);line-height:1.55}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden}
 header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px clamp(20px,5vw,76px);border-bottom:1px solid #e9e7e5;box-shadow:0 5px 24px #0000000b}
-.logo{display:flex;align-items:center;gap:12px;color:var(--black);font-size:19px;font-weight:900;line-height:1.05;letter-spacing:-.6px;text-decoration:none;white-space:nowrap}.logo small{display:block;font-size:10px;letter-spacing:2.4px;color:var(--muted);font-weight:700;margin-top:5px}.crest{width:48px;height:56px;flex:none;filter:drop-shadow(0 4px 5px #0002)}
-nav{display:flex;gap:clamp(12px,2vw,28px);align-items:center;flex-wrap:wrap}nav a{text-decoration:none;color:#34343a;font-size:13px;font-weight:750;transition:.2s}nav a:hover,nav a.active{color:var(--red)}nav a.active{border-bottom:2px solid var(--red);padding-bottom:5px}
-.btn-wpp,.hero a{background:var(--red);color:#fff!important;padding:12px 19px;border-radius:7px;text-decoration:none;font-weight:800;box-shadow:0 8px 20px #c51f3233;transition:.2s}.btn-wpp:hover,.hero a:hover{background:var(--red-dark);transform:translateY(-2px)}
-.hero{background:linear-gradient(90deg,#0a0a0dd1,#0a0a0d4d),url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1800') center/cover;min-height:500px;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,8vw,110px);color:#fff;position:relative}.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-2px;max-width:760px;font-weight:900}.hero p{font-size:clamp(16px,1.6vw,19px);margin:22px 0 30px;max-width:570px;color:#eee}.hero a{display:inline-block;width:fit-content;padding:15px 25px}
-.filtros{background:#fff;margin:34px auto 26px;padding:18px 22px;border:1px solid #ece9e7;border-radius:12px;display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:space-between;max-width:1320px;width:calc(100% - 48px);box-shadow:0 8px 30px #00000009}.filtros strong{font-size:14px}.filtros select{padding:11px 14px;border:1px solid #e3e0de;border-radius:7px;background:#fff;color:#333;outline-color:var(--red)}.filtros span{font-size:12px;color:var(--muted)}
-.titulo{max-width:1320px;margin:0 auto;padding:12px 24px 22px}.titulo h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.8px;color:var(--black)}.titulo p{color:var(--muted);margin-top:5px}
-.grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;padding:0 24px 70px}
-.photo-carousel{max-width:1320px;margin:30px auto 12px;padding:0 24px;position:relative}
+.logo{display:flex;align-items:center;gap:12px;color:var(--black);font-size:19px;font-weight:900;line-height:1.05;letter-spacing:-.6px;text-decoration:none;white-space:nowrap}
+.logo small{display:block;font-size:10px;letter-spacing:2.4px;color:var(--muted);font-weight:700;margin-top:5px}
+.crest{width:48px;height:56px;flex:none;filter:drop-shadow(0 4px 5px #0002)}
+nav{display:flex;gap:clamp(10px,1.7vw,24px);align-items:center;justify-content:center;flex-wrap:wrap}
+nav a{text-decoration:none;color:#34343a;font-size:13px;font-weight:750;transition:.2s}
+nav a:hover,nav a.active{color:var(--red)}
+nav a.active{border-bottom:2px solid var(--red);padding-bottom:5px}
+.btn-wpp,.hero a{background:var(--red);color:#fff!important;padding:12px 19px;border-radius:7px;text-decoration:none;font-weight:800;box-shadow:0 8px 20px #c51f3233;transition:.2s}
+.btn-wpp:hover,.hero a:hover{background:var(--red-dark);transform:translateY(-2px)}
+.hero{background:linear-gradient(90deg,#0a0a0dd1,#0a0a0d4d),url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1800') center/cover;min-height:500px;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,8vw,110px);color:#fff}
+.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-2px;max-width:760px;font-weight:900}
+.hero p{font-size:clamp(16px,1.6vw,19px);margin:22px 0 30px;max-width:570px;color:#eee}
+.hero a{display:inline-block;width:fit-content;padding:15px 25px}
+.photo-carousel{width:min(100% - 48px,1272px);margin:30px auto 12px}
 .photo-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px 2px 12px}
 .photo-track::-webkit-scrollbar{display:none}
-.photo-track img{flex:0 0 calc((100% - 42px)/4);width:calc((100% - 42px)/4);height:190px;object-fit:cover;border-radius:12px;scroll-snap-align:start;box-shadow:0 7px 22px #00000018}
+.photo-track img{display:block;flex:0 0 calc((100% - 42px)/4);width:calc((100% - 42px)/4);height:190px;object-fit:cover;border-radius:12px;scroll-snap-align:start;box-shadow:0 7px 22px #00000018}
 .photo-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
-.photo-controls button{width:38px;height:38px;border:1px solid #dedad7;border-radius:50%;background:#fff;color:var(--red);font-size:22px;font-weight:800;cursor:pointer}
+.photo-controls button{width:40px;height:40px;border:1px solid #dedad7;border-radius:50%;background:#fff;color:var(--red);font-size:22px;font-weight:800;cursor:pointer}
 .photo-controls button:hover{background:var(--red);color:#fff;border-color:var(--red)}
-@media(max-width:760px){.photo-carousel{padding:0 16px;margin:22px auto 8px}.photo-track{gap:12px}.photo-track img{flex-basis:82%;width:82%;height:190px}.grid{padding:0 16px 45px;gap:17px}}
-footer{background:var(--black);color:#fff;display:flex;justify-content:space-between;padding:48px clamp(24px,6vw,90px);gap:35px;flex-wrap:wrap}footer h3{margin-bottom:13px;font-size:16px}footer p{color:#bdbdc3;line-height:1.9;font-size:13px}.copy{background:#09090b;color:#999;text-align:center;padding:15px;font-size:11px}
-@media(max-width:760px){header{position:relative;align-items:flex-start;flex-direction:column;padding:14px 20px;gap:15px}nav{gap:13px}nav a{font-size:12px}.btn-wpp{padding:9px 12px}.hero{min-height:430px;padding:34px 24px}.hero h1{letter-spacing:-1px}.filtros{width:calc(100% - 32px);margin:20px auto}.filtros>div{width:100%}.filtros select{flex:1;min-width:120px}.titulo{padding:12px 18px 20px}.grid{padding:0 16px 45px;gap:17px}footer{padding:35px 24px}}
+.filtros{background:#fff;margin:30px auto 26px;padding:18px 22px;border:1px solid #ece9e7;border-radius:12px;display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:space-between;max-width:1272px;width:calc(100% - 48px);box-shadow:0 8px 30px #00000009}
+.filtros strong{font-size:14px}
+.filtros>div{display:flex;gap:10px;flex-wrap:wrap}
+.filtros select{padding:11px 14px;border:1px solid #e3e0de;border-radius:7px;background:#fff;color:#333;outline-color:var(--red);min-width:145px}
+.filtros span{font-size:12px;color:var(--muted)}
+.titulo{max-width:1272px;margin:0 auto;padding:12px 24px 22px}
+.titulo h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.8px;color:var(--black)}
+.titulo p{color:var(--muted);margin-top:5px}
+.grid{max-width:1272px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:0 24px 70px}
+.card{background:#fff;border:1px solid #eeecea;border-radius:13px;overflow:hidden;box-shadow:0 8px 26px #0000000b;text-align:left;padding-bottom:20px;position:relative;display:flex;flex-direction:column;min-width:0;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 38px #0000001c}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card h3{font-size:19px;margin:17px 20px 5px;color:var(--black)}
+.tag{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;padding:6px 11px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}
+.preco{color:var(--red-dark);font-size:18px;font-weight:900;margin:0 20px}
+.info{font-size:13px;margin:7px 20px;color:var(--muted)}
+.card a{display:inline-block;align-self:flex-start;margin:13px 20px 0;border:1px solid var(--red);color:var(--red);padding:9px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:800;transition:.2s}
+.card a:hover{background:var(--red);color:#fff}
+footer{background:var(--black);color:#fff;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:48px clamp(24px,6vw,90px);gap:35px}
+footer h3{margin-bottom:13px;font-size:16px}
+footer p{color:#bdbdc3;line-height:1.9;font-size:13px}
+.copy{background:#09090b;color:#999;text-align:center;padding:15px;font-size:11px}
+@media(max-width:900px){header{position:relative;flex-direction:column;gap:14px;padding:16px 22px}nav{width:100%;gap:12px 18px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.photo-track img{flex-basis:calc((100% - 28px)/3);width:calc((100% - 28px)/3)}}
+@media(max-width:600px){
+header{padding:14px 16px;align-items:center}.logo{font-size:17px}.crest{width:43px;height:50px}
+nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%;text-align:center}
+nav a{font-size:12px;padding:7px 3px}nav .btn-wpp{grid-column:1/-1;justify-self:stretch;text-align:center;padding:11px}
+.hero{min-height:390px;padding:38px 22px;background-position:58% center}
+.hero h1{font-size:clamp(32px,9vw,44px);letter-spacing:-1.2px}.hero p{font-size:15px;margin:17px 0 24px}
+.photo-carousel{width:calc(100% - 32px);margin:22px auto 8px}
+.photo-track{gap:12px}.photo-track img{flex:0 0 86%;width:86%;height:190px}
+.photo-controls button{width:38px;height:38px}
+.filtros{width:calc(100% - 32px);margin:20px auto;padding:16px;display:grid;grid-template-columns:1fr;gap:12px}
+.filtros>div{display:grid;grid-template-columns:1fr;gap:9px;width:100%}.filtros select{width:100%;min-width:0}
+.filtros span{text-align:center}
+.titulo{padding:14px 18px 18px;text-align:center}.titulo h2{font-size:25px}
+.grid{grid-template-columns:minmax(0,1fr);width:100%;padding:0 16px 44px;gap:18px}
+.card{width:100%;max-width:440px;margin:0 auto}.card img{height:220px}
+footer{grid-template-columns:1fr;text-align:center;padding:34px 22px;gap:25px}
+footer p br{display:none}.copy{padding:14px 18px;line-height:1.5}
+}
 </style>
 </head>
 <body>
@@ -96,5 +142,19 @@ footer{background:var(--black);color:#fff;display:flex;justify-content:space-bet
 </footer>
 <div class="copy">© 2024 Brandão Móveis Planejados - Todos os direitos reservados • Passo Fundo - RS</div>
 
-<script>\n(function(){const track=document.getElementById("projectsCarousel");if(!track)return;const move=(direction)=>{const card=track.querySelector(".card");const gap=parseFloat(getComputedStyle(track).gap)||24;track.scrollBy({left:direction*(card.getBoundingClientRect().width+gap),behavior:"smooth"});};["prevProject","prevProjectTop"].forEach(id=>document.getElementById(id)?.addEventListener("click",()=>move(-1)));["nextProject","nextProjectTop"].forEach(id=>document.getElementById(id)?.addEventListener("click",()=>move(1)));})();\n</script>\n</body>
+<script>
+(function(){
+ const track=document.getElementById("photoTrack");
+ if(!track)return;
+ const move=(direction)=>{
+   const photo=track.querySelector("img");
+   if(!photo)return;
+   const gap=parseFloat(getComputedStyle(track).gap)||14;
+   track.scrollBy({left:direction*(photo.getBoundingClientRect().width+gap),behavior:"smooth"});
+ };
+ document.getElementById("photoPrev")?.addEventListener("click",()=>move(-1));
+ document.getElementById("photoNext")?.addEventListener("click",()=>move(1));
+})();
+</script>
+</body>
 </html>
