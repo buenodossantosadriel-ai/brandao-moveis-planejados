@@ -14,13 +14,15 @@ nav{display:flex;gap:clamp(12px,2vw,28px);align-items:center;flex-wrap:wrap}nav 
 .hero{background:linear-gradient(90deg,#0a0a0dd1,#0a0a0d4d),url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1800') center/cover;min-height:500px;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,8vw,110px);color:#fff;position:relative}.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-2px;max-width:760px;font-weight:900}.hero p{font-size:clamp(16px,1.6vw,19px);margin:22px 0 30px;max-width:570px;color:#eee}.hero a{display:inline-block;width:fit-content;padding:15px 25px}
 .filtros{background:#fff;margin:34px auto 26px;padding:18px 22px;border:1px solid #ece9e7;border-radius:12px;display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:space-between;max-width:1320px;width:calc(100% - 48px);box-shadow:0 8px 30px #00000009}.filtros strong{font-size:14px}.filtros select{padding:11px 14px;border:1px solid #e3e0de;border-radius:7px;background:#fff;color:#333;outline-color:var(--red)}.filtros span{font-size:12px;color:var(--muted)}
 .titulo{max-width:1320px;margin:0 auto;padding:12px 24px 22px}.titulo h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.8px;color:var(--black)}.titulo p{color:var(--muted);margin-top:5px}
-.carousel-wrap{max-width:1320px;margin:0 auto;padding:0 24px 70px;position:relative}
-.grid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 2px 20px;scrollbar-width:thin;scrollbar-color:var(--red) #e7e4e2}
-.grid::-webkit-scrollbar{height:7px}.grid::-webkit-scrollbar-track{background:#e7e4e2;border-radius:10px}.grid::-webkit-scrollbar-thumb{background:var(--red);border-radius:10px}
-.card{flex:0 0 calc((100% - 48px)/3);min-width:280px;scroll-snap-align:start}
-.carousel-controls{display:flex;gap:9px;align-items:center}.carousel-controls button{width:42px;height:42px;border:1px solid #dedad7;border-radius:50%;background:#fff;color:var(--red);font-size:22px;font-weight:800;cursor:pointer;transition:.2s}.carousel-controls button:hover{background:var(--red);color:#fff;border-color:var(--red)}
-.carousel-heading{display:flex;justify-content:space-between;align-items:center;gap:16px}
-@media(max-width:760px){.carousel-wrap{padding:0 16px 45px}.grid{gap:16px}.card{flex-basis:min(86%,340px)}.carousel-heading{align-items:flex-end}.carousel-controls button{width:38px;height:38px}}.card{background:#fff;border:1px solid #eeecea;border-radius:13px;overflow:hidden;box-shadow:0 8px 26px #0000000b;text-align:left;padding-bottom:20px;position:relative;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-6px);box-shadow:0 18px 38px #0000001c}.card img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .4s}.card:hover img{transform:scale(1.035)}.card h3{font-size:19px;margin:17px 20px 5px;color:var(--black)}.tag{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;padding:6px 11px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}.preco{color:var(--red-dark);font-size:18px;font-weight:900;margin:0 20px}.info{font-size:13px;margin:7px 20px;color:var(--muted)}.card a{display:inline-block;margin:13px 20px 0;border:1px solid var(--red);color:var(--red);padding:9px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:800;transition:.2s}.card a:hover{background:var(--red);color:#fff}
+.grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;padding:0 24px 70px}
+.photo-carousel{max-width:1320px;margin:30px auto 12px;padding:0 24px;position:relative}
+.photo-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px 2px 12px}
+.photo-track::-webkit-scrollbar{display:none}
+.photo-track img{flex:0 0 calc((100% - 42px)/4);width:calc((100% - 42px)/4);height:190px;object-fit:cover;border-radius:12px;scroll-snap-align:start;box-shadow:0 7px 22px #00000018}
+.photo-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:4px}
+.photo-controls button{width:38px;height:38px;border:1px solid #dedad7;border-radius:50%;background:#fff;color:var(--red);font-size:22px;font-weight:800;cursor:pointer}
+.photo-controls button:hover{background:var(--red);color:#fff;border-color:var(--red)}
+@media(max-width:760px){.photo-carousel{padding:0 16px;margin:22px auto 8px}.photo-track{gap:12px}.photo-track img{flex-basis:82%;width:82%;height:190px}.grid{padding:0 16px 45px;gap:17px}}
 footer{background:var(--black);color:#fff;display:flex;justify-content:space-between;padding:48px clamp(24px,6vw,90px);gap:35px;flex-wrap:wrap}footer h3{margin-bottom:13px;font-size:16px}footer p{color:#bdbdc3;line-height:1.9;font-size:13px}.copy{background:#09090b;color:#999;text-align:center;padding:15px;font-size:11px}
 @media(max-width:760px){header{position:relative;align-items:flex-start;flex-direction:column;padding:14px 20px;gap:15px}nav{gap:13px}nav a{font-size:12px}.btn-wpp{padding:9px 12px}.hero{min-height:430px;padding:34px 24px}.hero h1{letter-spacing:-1px}.filtros{width:calc(100% - 32px);margin:20px auto}.filtros>div{width:100%}.filtros select{flex:1;min-width:120px}.titulo{padding:12px 18px 20px}.grid{padding:0 16px 45px;gap:17px}footer{padding:35px 24px}}
 </style>
@@ -46,7 +48,7 @@ footer{background:var(--black);color:#fff;display:flex;justify-content:space-bet
   <a href="https://wa.me/5554999990000">Solicitar Orçamento</a>
 </div>
 
-<div class="filtros">
+<section class="photo-carousel" aria-label="Fotos dos projetos"><div class="photo-track" id="photoTrack"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=900" alt="Projeto de cozinha planejada"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=900" alt="Projeto de quarto planejado"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900" alt="Projeto de sala de estar"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900" alt="Projeto de home office"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=900" alt="Projeto de banheiro"><img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?w=900" alt="Projeto de closet"></div><div class="photo-controls"><button type="button" id="photoPrev" aria-label="Foto anterior">‹</button><button type="button" id="photoNext" aria-label="Próxima foto">›</button></div></section>\n\n<div class="filtros">
   <strong>Filtrar projetos:</strong>
   <div style="display:flex;gap:10px;flex-wrap:wrap">
     <select><option>Ambiente ▼</option><option>Cozinha</option><option>Quarto</option><option>Sala</option><option>Home Office</option></select>
@@ -56,9 +58,9 @@ footer{background:var(--black);color:#fff;display:flex;justify-content:space-bet
   <span>6 resultados encontrados</span>
 </div>
 
-<div class="titulo carousel-heading" id="projetos"><div><h2>Ambientes que valorizam seu espaço</h2><p>Deslize para conhecer nossos projetos sob medida.</p></div><div class="carousel-controls"><button type="button" id="prevProjectTop" aria-label="Projeto anterior">‹</button><button type="button" id="nextProjectTop" aria-label="Próximo projeto">›</button></div></div>
+<div class="titulo" id="projetos"><h2>Ambientes que valorizam seu espaço</h2><p>Projetos sob medida, acabamento de qualidade e design pensado para você.</p></div>
 
-<div class="carousel-wrap">\n<div class="grid" id="projectsCarousel" aria-label="Carrossel de projetos de móveis planejados">
+<div class="grid">
   <div class="card">
     <span class="tag">Mais solicitado</span>
     <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600">
