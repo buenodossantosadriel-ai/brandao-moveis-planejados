@@ -5,50 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brandão Móveis Planejados - Passo Fundo RS</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif}
-  body{background:#f5f5f5;color:#111}
-  header{background:#fff;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;flex-wrap:wrap}
-  .logo{font-size:26px;font-weight:900;line-height:1.1}
-  .logo span{color:#2e5a33}
-  nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-  nav a{text-decoration:none;color:#111;font-weight:bold}
-  nav a.active{border-bottom:3px solid #2e5a33}
-  .btn-wpp{background:#1f7a33;color:#fff;padding:10px 18px;border-radius:20px;text-decoration:none;font-weight:bold}
-  .hero{background:url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1600') center/cover;height:380px;display:flex;flex-direction:column;justify-content:center;padding:40px;color:#fff;position:relative}
-  .hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.45)}
-  .hero>*{position:relative;z-index:1}
-  .hero h1{font-size:44px;max-width:650px}
-  .hero p{font-size:18px;margin:12px 0 20px;max-width:600px}
-  .hero a{background:#1f7a33;color:#fff;padding:14px 26px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;width:fit-content}
-  .filtros{background:#fff;margin:20px 40px;padding:18px;border-radius:12px;display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:space-between}
-  .filtros select{padding:10px;border:1px solid #ccc;border-radius:20px}
-  .titulo{padding:10px 40px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;padding:0 40px 40px}
-  .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);text-align:center;padding-bottom:15px;position:relative}
-  .card img{width:100%;height:160px;object-fit:cover}
-  .tag{position:absolute;top:10px;left:10px;background:#fff;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:bold}
-  .card h3{font-size:17px;margin:12px 10px 5px}
-  .preco{color:#1f4d2a;font-size:19px;font-weight:900}
-  .info{font-size:13px;margin:6px 0;color:#333}
-  .card a{display:inline-block;margin:10px 15px;border:1px solid #1f7a33;color:#1f4d2a;padding:8px 20px;border-radius:20px;text-decoration:none;font-weight:bold}
-  footer{background:#222;color:#fff;display:flex;justify-content:space-between;padding:30px 40px;gap:30px;flex-wrap:wrap}
-  footer h3{margin-bottom:10px}
-  footer p{color:#ccc;line-height:1.6;font-size:14px}
-  .copy{background:#111;color:#fff;text-align:center;padding:10px;font-size:12px}
-  @media(max-width:700px){.hero h1{font-size:30px}header,footer{padding:15px 20px}.filtros,.grid,.titulo{margin:10px 20px;padding:15px}}
+:root{--black:#101014;--red:#c51f32;--red-dark:#941629;--ink:#202027;--muted:#707078;--paper:#f6f5f3}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif}html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);line-height:1.55}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;gap:24px;padding:14px clamp(20px,5vw,76px);border-bottom:1px solid #e9e7e5;box-shadow:0 5px 24px #0000000b}
+.logo{display:flex;align-items:center;gap:12px;color:var(--black);font-size:19px;font-weight:900;line-height:1.05;letter-spacing:-.6px;text-decoration:none;white-space:nowrap}.logo small{display:block;font-size:10px;letter-spacing:2.4px;color:var(--muted);font-weight:700;margin-top:5px}.crest{width:48px;height:56px;flex:none;filter:drop-shadow(0 4px 5px #0002)}
+nav{display:flex;gap:clamp(12px,2vw,28px);align-items:center;flex-wrap:wrap}nav a{text-decoration:none;color:#34343a;font-size:13px;font-weight:750;transition:.2s}nav a:hover,nav a.active{color:var(--red)}nav a.active{border-bottom:2px solid var(--red);padding-bottom:5px}
+.btn-wpp,.hero a{background:var(--red);color:#fff!important;padding:12px 19px;border-radius:7px;text-decoration:none;font-weight:800;box-shadow:0 8px 20px #c51f3233;transition:.2s}.btn-wpp:hover,.hero a:hover{background:var(--red-dark);transform:translateY(-2px)}
+.hero{background:linear-gradient(90deg,#0a0a0dd1,#0a0a0d4d),url('https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1800') center/cover;min-height:500px;display:flex;flex-direction:column;justify-content:center;padding:clamp(36px,8vw,110px);color:#fff;position:relative}.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-2px;max-width:760px;font-weight:900}.hero p{font-size:clamp(16px,1.6vw,19px);margin:22px 0 30px;max-width:570px;color:#eee}.hero a{display:inline-block;width:fit-content;padding:15px 25px}
+.filtros{background:#fff;margin:34px auto 26px;padding:18px 22px;border:1px solid #ece9e7;border-radius:12px;display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:space-between;max-width:1320px;width:calc(100% - 48px);box-shadow:0 8px 30px #00000009}.filtros strong{font-size:14px}.filtros select{padding:11px 14px;border:1px solid #e3e0de;border-radius:7px;background:#fff;color:#333;outline-color:var(--red)}.filtros span{font-size:12px;color:var(--muted)}
+.titulo{max-width:1320px;margin:0 auto;padding:12px 24px 22px}.titulo h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.8px;color:var(--black)}.titulo p{color:var(--muted);margin-top:5px}
+.grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;padding:0 24px 70px}.card{background:#fff;border:1px solid #eeecea;border-radius:13px;overflow:hidden;box-shadow:0 8px 26px #0000000b;text-align:left;padding-bottom:20px;position:relative;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-6px);box-shadow:0 18px 38px #0000001c}.card img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .4s}.card:hover img{transform:scale(1.035)}.card h3{font-size:19px;margin:17px 20px 5px;color:var(--black)}.tag{position:absolute;top:14px;left:14px;background:var(--red);color:#fff;padding:6px 11px;border-radius:4px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}.preco{color:var(--red-dark);font-size:18px;font-weight:900;margin:0 20px}.info{font-size:13px;margin:7px 20px;color:var(--muted)}.card a{display:inline-block;margin:13px 20px 0;border:1px solid var(--red);color:var(--red);padding:9px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:800;transition:.2s}.card a:hover{background:var(--red);color:#fff}
+footer{background:var(--black);color:#fff;display:flex;justify-content:space-between;padding:48px clamp(24px,6vw,90px);gap:35px;flex-wrap:wrap}footer h3{margin-bottom:13px;font-size:16px}footer p{color:#bdbdc3;line-height:1.9;font-size:13px}.copy{background:#09090b;color:#999;text-align:center;padding:15px;font-size:11px}
+@media(max-width:760px){header{position:relative;align-items:flex-start;flex-direction:column;padding:14px 20px;gap:15px}nav{gap:13px}nav a{font-size:12px}.btn-wpp{padding:9px 12px}.hero{min-height:430px;padding:34px 24px}.hero h1{letter-spacing:-1px}.filtros{width:calc(100% - 32px);margin:20px auto}.filtros>div{width:100%}.filtros select{flex:1;min-width:120px}.titulo{padding:12px 18px 20px}.grid{padding:0 16px 45px;gap:17px}footer{padding:35px 24px}}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">🪑 Brandão<br>Móveis Planejados</div>
+  <a class="logo" href="#" aria-label="Brandão Móveis Planejados - início"><svg class="crest" viewBox="0 0 100 116" role="img" aria-label="Brasão preto e vermelho com a letra B"><path d="M50 4 91 18v36c0 27-16 45-41 58C25 99 9 81 9 54V18L50 4Z" fill="#111116" stroke="#c51f32" stroke-width="6"/><path d="M50 13 82 24v30c0 21-12 36-32 47-20-11-32-26-32-47V24l32-11Z" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="1.5"/><path d="M38 30h18c13 0 20 6 20 16 0 7-4 11-10 13 8 2 12 7 12 15 0 12-9 19-23 19H38V30Zm13 12v12h5c5 0 8-2 8-6s-3-6-8-6h-5Zm0 23v16h7c6 0 9-3 9-8s-3-8-9-8h-7Z" fill="#fff"/></svg><span>BRANDÃO<small>MÓVEIS PLANEJADOS</small></span></a>
   <nav>
     <a href="#" class="active">Início</a>
-    <a href="#">Projetos</a>
-    <a href="#">Cozinhas</a>
-    <a href="#">Quartos</a>
-    <a href="#">Escritórios</a>
-    <a href="#">Contato</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#projetos">Cozinhas</a>
+    <a href="#projetos">Quartos</a>
+    <a href="#projetos">Escritórios</a>
+    <a href="#contato">Contato</a>
     <a href="https://wa.me/5554999990000" class="btn-wpp">📱 Orçamento Grátis</a>
   </nav>
 </header>
@@ -69,7 +50,7 @@
   <span>6 resultados encontrados</span>
 </div>
 
-<div class="titulo"><h2>Brandão Móveis Planejados</h2></div>
+<div class="titulo" id="projetos"><h2>Ambientes que valorizam seu espaço</h2><p>Projetos sob medida, acabamento de qualidade e design pensado para você.</p></div>
 
 <div class="grid">
   <div class="card">
@@ -100,7 +81,7 @@
   </div>
 </div>
 
-<footer>
+<footer id="contato">
   <div><h3>Brandão Móveis Planejados</h3><p>Móveis planejados sob medida para sua casa e<br>escritório em Passo Fundo - RS.<br>Qualidade, design e funcionalidade.</p></div>
   <div><h3>Contato</h3><p>📍 Rua Independência, 1234 - Centro,<br>Passo Fundo - RS, CEP 99010-060<br>📱 WhatsApp: (54) 9 9999-0000<br>✉️ contato@brandaomoveis.com.br</p></div>
   <div><h3>Horário de Atendimento</h3><p>Segunda a Sexta: 08h às 18h<br>Sábado: 08h às 12h</p></div>
